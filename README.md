@@ -2,7 +2,7 @@
 ## README ##
 
 
-###Ticketchai (Wanna Buy Tickets in english) repository###
+###Ticketchai ("Wanna Buy Tickets" in english) repository###
 
 ### What is this repository for? ###
 
