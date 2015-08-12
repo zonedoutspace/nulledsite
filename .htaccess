@@ -1,0 +1,67 @@
+<IfModule mod_rewrite.c>
+
+#AddHandler application/x-httpd-php53 .css
+ErrorDocument 404 /404
+#ErrorDocument 500 http://localhost/ticketchai-ori/500/
+# or map them to one error document:
+# ErrorDocument 404 /pages/errors/error_redirect.php
+# ErrorDocument 500 /pages/errors/error_redirect.php
+
+
+RewriteEngine On
+
+RewriteCond %{REQUEST_URI} ^/404/$
+RewriteRule ^(.*)$ 404.php [L]
+
+RewriteRule ^404$ 404.php [L]
+RewriteRule ^home$ index.php [L]
+RewriteRule ^m.home$ m-index.php [L]
+RewriteRule ^account$ dashboard.php [L]
+RewriteRule ^address$ address.php [L]
+RewriteRule ^mywishlist$ wishlist.php [L]
+RewriteRule ^myorderlist$ order_list.php [L]
+RewriteRule ^order-details/([0-9]+)$ order_details.php?id=$1 [L]
+RewriteRule ^signin-signup$ signin-signup.php [L]
+RewriteRule ^cart$ cart.php [L]
+RewriteRule ^signin-signup/([A-Za-z0-9_\-]+)$ signin-signup.php?type=$1 [L]
+RewriteRule ^checkout-step-one$ shipping_billing.php [L]
+RewriteRule ^merchant-form$ merchant_event_request.php [L]
+
+RewriteRule ^terms-of-service$ terms.php [L]
+RewriteRule ^about-us$ about_us.php [L]
+RewriteRule ^contact-us$ contact.php [L]
+RewriteRule ^customer-support$ customer_support.php [L]
+RewriteRule ^sitemap$ sitemap.php [L]
+RewriteRule ^our-sponsor$ our_sponsor.php [L]
+RewriteRule ^how-to-buy$ how_to_buy.php [L]
+RewriteRule ^privacy-policy$ privacy_policy.php [L]
+
+
+RewriteRule ^editaddress/([0-9]+)$ edit_address.php?id=$1 [L]
+RewriteRule ^category/([0-9]+)/([A-Za-z0-9_\-]+)$ category.php?id=$1&title=$2 [L]
+RewriteRule ^details/([0-9]+)/([A-Za-z0-9_\-]+)$ event_details.php?id=$1&title=$2 [L]
+RewriteRule ^product/([0-9]+)/([A-Za-z0-9_\-]+)/([A-Za-z0-9_\-]+)$ product_details.php?product_id=$1&product_name=$2&secure_code=$3 [L]
+RewriteRule ^checkout-step-two/([0-9]+)/([0-9]+)/([A-Za-z0-9_\-=]+)$ payment_method.php?billing=$1&shipping=$2&method=$3 [L]
+RewriteRule ^process-order/([0-9]+)/([0-9]+)/([A-Za-z0-9_\-]+)$ processing.php?billing=$1&shipping=$2&pay=$3 [L]
+RewriteRule ^confirmation/([A-Za-z0-9_\-]+)/([A-Za-z0-9_\-]+)/([0-9]+)$ confirmation.php?status=$1&pay=$2&oid=$3 [L]
+RewriteRule ^redirect/([A-Za-z0-9_\-=]+)/([A-Za-z0-9_\-=]+)$ redirect.php?total=$1&oid=$2 [L]
+RewriteRule ^announcement/([0-9]+)/([A-Za-z0-9_\-=]+)$ announcement.php?id=$1&title=$2 [L]
+RewriteRule ^search/([A-Za-z0-9_\-=]+)$ search.php?key=$1 [L]
+
+RewriteRule ^error$ 404.php [L]
+
+
+
+</IfModule>
+
+#cache code from http://www.askapache.com/htaccess/speed-up-sites-with-htaccess-caching.html 
+#<ifModule mod_headers.c>
+# WEEK
+#<FilesMatch "\.(ico|gif|jpg|jpeg|png|pdf)$">
+# Header set Cache-Control "max-age=604800"
+#</FilesMatch>
+# WEEK
+#<FilesMatch "\.(js|css|swf)$">
+ # Header set Cache-Control "max-age=604800"
+#</FilesMatch>
+#</ifModule>

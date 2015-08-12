@@ -1,0 +1,51 @@
+table.main{
+    border-collapse: collapse; 
+    padding-left:6px;
+    padding-right: 3px;
+    width: 100%;
+    border: 4px solid darkgray;
+    font-family: sans-serif;
+}
+table.main td {
+    padding-left: 8px;
+    border: 3px solid darkgray;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-right: 4px;
+    border-collapse: collapse;
+}
+
+.barcode {
+    margin: 0;
+    vertical-align: top;
+    color: #000044;
+}
+
+.barcodecell {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.event_logo{
+    width: 100px;
+    height: 80px;
+}
+
+.top_text{
+    text-align: center;
+    height: 30px;
+    width: 70%;
+    background-color: darkgray;
+    border-radius: 5px;
+    color: black;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 5px;
+    font-family: sans-serif;
+    font-weight: bold;
+    border: 1px solid darkgrey;
+}
+
+.no_border{
+    border-style: none;
+}
