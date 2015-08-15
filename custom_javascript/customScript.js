@@ -222,10 +222,10 @@ $(document).ready(function () {
         var signup_user_password = $("#signup_user_password").val();
         var signup_user_confirm_password = $("#signup_user_confirm_password").val();
         var ifChecked = false;
-        $('input#AcceptTerms').on('ifChecked', function () {
+        var valCheck = $("input[name=AcceptTerms]:checked").val();
+        if(typeof valCheck != "undefined"){
             ifChecked = true;
-        });
-
+        }
 
         var status = 0;
 
