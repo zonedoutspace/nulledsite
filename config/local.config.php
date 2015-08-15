@@ -18,7 +18,7 @@ if ($domain == 'ticketchai.com') {
     $config['DB_PASSWORD'] = "ODsza^neen0?";
 } else {
     $config['SITE_NAME'] = 'Ticket Chai | Buy Online Tickets....';
-    $config['BASE_URL'] = 'http://localhost/ticketchai-ori/';
+    $config['BASE_URL'] = 'http://localhost/ticketchai.com/';
     $config['ROOT_DIR'] = '/ticketchai-ori/';
     $config['DB_TYPE'] = 'mysql';
     $config['DB_HOST'] = 'localhost'; //updated the host name for local run
